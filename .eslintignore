@@ -1,0 +1,6 @@
+/build/
+/config/
+/dist/
+/*.js
+/src/assets/scripts/global/flexiblefit.js
+/src/assets/scripts/3rdlibs/

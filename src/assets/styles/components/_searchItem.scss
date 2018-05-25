@@ -1,0 +1,41 @@
+.wb-search-wrap{
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #3ab46b;
+}
+.wb-search-box{
+  margin:0 10px;
+  display:flex;
+  display:box;
+  justify-content: space-around;
+}
+.wb-search-sbox{
+  position: relative;
+  height:40px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-left:28px;
+  flex-grow: 1;
+}
+.wb-search-icon{
+  position:absolute;
+  left: 5px;
+  top:7px;
+}
+.wb-search-institution{
+  width:97%;
+  background: transparent;
+  outline-style: none;
+  border: 0;
+  font-size: 16px;
+  line-height:1;
+  vertical-align: top;
+  height:100%;
+}
+.wb-search-text{
+  text-align:center;
+  padding: 0 10px;
+  line-height:40px;
+  font-size: 20px;
+}

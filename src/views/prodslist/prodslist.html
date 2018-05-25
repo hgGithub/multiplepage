@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>产品列表</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+  <link href="/static/images/logo.png" rel="Shortcut Icon" type="image/x-icon">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <% const chunks = htmlWebpackPlugin.files.chunks;
+  if (chunks) { %>
+  <script src="<%= chunks['global/flexiblefit'].entry%>"></script>
+  <% } %>
+  <% const cssChunk = htmlWebpackPlugin.files.css;
+  if (cssChunk) { %>
+  <link rel="stylesheet" href="<%= cssChunk %>">
+  <%}%>
+</head>
+<body>
+  <h1 class="wb-none">产品列表</h1>
+  <div id="app"></div>
+  <%=htmlWebpackPlugin.files.webpackManifest%>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <% const hwpOptionHeadChunks = htmlWebpackPlugin.options.headChunks; %>
+  <% if (hwpOptionHeadChunks.indexOf(chunk) === -1) { %>
+  <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry%>"></script>
+  <% } %><% } %>
+</body>
+</html>
