@@ -19,7 +19,8 @@ exports.cssLoaders = function (options) {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
+      minimize: true
     }
   }
 
@@ -45,7 +46,7 @@ exports.cssLoaders = function (options) {
     // Extract CSS when that option is specified
     // (which is the case during production build)
     // options.extract = false // Not extract.
-    if (options.extract) {
+    if (options.extract && loader && loader === 'less') {
       return ExtractTextPlugin.extract({
         use: loaders,
         fallback: 'vue-style-loader'

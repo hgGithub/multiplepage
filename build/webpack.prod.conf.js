@@ -144,7 +144,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     }),
     new webpack.ProvidePlugin({
-      // $: "jquery",
+      $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery"
     })
@@ -182,7 +182,7 @@ for (var pathname in pages) {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
     chunks: inlineSpts.getChunks(pathname), // 每个html引用的js模块
-    chunksSortMode: 'manual',
+    chunksSortMode: 'dependency',
     inject: false,
     headChunks: Object.keys(inlineSpts.headChunks),
     minify: {

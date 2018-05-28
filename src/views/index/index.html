@@ -9,11 +9,11 @@
   <meta content="telephone=no,email=no" name="format-detection">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <% const chunks = htmlWebpackPlugin.files.chunks;
+  <% var chunks = htmlWebpackPlugin.files.chunks;
   if (chunks) { %>
   <script src="<%= chunks['global/flexiblefit'].entry%>"></script>
   <% } %>
-  <% const cssChunk = htmlWebpackPlugin.files.css;
+  <% var cssChunk = htmlWebpackPlugin.files.css;
   if (cssChunk) { %>
   <link rel="stylesheet" href="<%= cssChunk %>">
   <%}%>

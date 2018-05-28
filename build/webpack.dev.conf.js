@@ -8,6 +8,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 var inlineSpts = require('./chunks-config')
+// 图片无损压缩处理
+const execSync = require('child_process').execSync;
+var cmd = 'gulp tiny';
+try {
+  execSync(cmd)
+} catch(e) {
+  console.log("图片压缩失败", e)
+}
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -87,7 +95,7 @@ module.exports = new Promise((resolve, reject) => {
           filename: pathname + '.html',
           template: pages[pathname], // 模板路径
           chunks: inlineSpts.getChunks(pathname), // 每个html引用的js模块,
-          chunksSortMode: 'manual',
+          chunksSortMode: 'dependency',
           inject: false,
           headChunks: Object.keys(inlineSpts.headChunks)
         };
