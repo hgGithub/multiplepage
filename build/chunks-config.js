@@ -19,7 +19,7 @@ const HEADCHUNKS = {
 
 /**
  * [MANIFESTCHUNKS 由于生成的manifest包含HEADCHUNKS,而HEADCHUNKS
- * 执行在前，所以有错误出现,为避免改错误发生，单独设置MANIFESTCHUNKS
+ * 执行在前，所以有错误出现,为避免该错误发生，单独设置MANIFESTCHUNKS
  *所需要包含的chunks,每添加一个CHUNKS，请对应也添加一个到MANIFESTCHUNKS]
  * @type {Array}
  */
